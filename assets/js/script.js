@@ -2,6 +2,7 @@ var url = ('https://digimon-api.vercel.app/api/digimon')
 var tabla = document.getElementById('tabla')
 var ind = 1
 var digiDatos = []
+const sonido = document.getElementById('digiEvolucion')
 
 function listado(){
     document.getElementById('lista').classList.remove('d-none')
@@ -16,14 +17,14 @@ fetch(url)
         digiDatos.push(digimon)
         /* Recorro los datos de la api */
             for (digi of digimon){
-                /* condicional para mostrar sólo los primeros 10 digimon */
-                if (ind === 13){
+                /* condicional para mostrar sólo los primeros X digimon */
+/*                 if (ind === 100){
                     break
                 }
-                /* Inserto elemento html tabla con los datos correspondientes */
+ */                /* Inserto elemento html tabla con los datos correspondientes */
                 tabla.innerHTML += `<tr id="ver" onclick="ver(this)">
                                         <td>${ind}</td>
-                                        <td>${digi.name}</td>
+                                        <td class="selec">${digi.name}</td>
                                     </tr>`
                 /* Suma 1 por cda vuelta de ciclo */
                 ind++;
@@ -36,6 +37,10 @@ fetch(url)
 function ver(fila){
     /* hago coincidir el índice de los datos de la api y el indice de la tabla con la fila seleccionada */
     var digimon = digiDatos[0][fila.rowIndex - 1]
+
+    /* Activo el sonido cada vez que se llama a la función */
+    sonido.currentTime = 0;
+    sonido.play();
     /* remuevo clase para mostrar la carta con los datos del digimon */
     document.getElementById('carta').classList.remove('d-none')
     /* Insertamos los datos en la sección html correspondiente */
@@ -43,5 +48,6 @@ function ver(fila){
     document.getElementById('name').textContent = `Nombre: ${digimon.name}`
     document.getElementById('level').textContent = `Nivel: ${digimon.level}`
 }
+
 
 
