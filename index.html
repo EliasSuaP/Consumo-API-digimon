@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digimon</title>
+    <title>Digicultura</title>
 
-
+    <!-- FavIcon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon-16x16.png">
     <!-- boostrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <!-- CSS -->
@@ -31,7 +32,7 @@
               <div class="collapse navbar-collapse text-end" id="navbarNav">
                 <ul class="navbar-nav fs-4">
                   <li class="nav-item mx-5">
-                    <a class="nav-link active" onclick="listado()" aria-current="page" href="#"><i class="fa-solid fa-list"></i>Listado</a>
+                    <a class="nav-link active" onclick="listado()" aria-current="page" href="#"><i class="fa-solid fa-list"></i> Ver Listado</a>
                   </li>
                   <li class="nav-item mx-5">
                     <a class="nav-link disabled" href="#">Cartas</a>
@@ -49,9 +50,9 @@
         <h1 class="text-center text-uppercase text-warning fw-bold mt-4">Digiculturizate</h1>
         <section class="container">
           <div class="row">
-              <article id="lista" class="d-none col-lg-4 col-md-6 col-sm-12 mx-2 bg-warning bg-opacity-50 rounded">
+              <article id="lista" class="d-none col-lg-4 col-md-6 col-sm-12 mx-2 bg-warning bg-opacity-50 rounded overflow-y-scroll alto">
                 <h2 class="fs-4 fw-bold mt-2">Selecciona un digimon de la tabla</h2>  
-                <table class="table table-dark my-2">
+                <table class="table table-dark my-2 alto">
                       <thead>
                           <tr>
                               <th scope="col">#</th>
@@ -63,12 +64,12 @@
                       </tbody>
                   </table>
               </article>
-              <article class="col-lg-6 col-md-6 col-sm-12 mx-2 bg-warning bg-opacity-50 rounded">
+              <article class="col-lg-6 col-md-6 col-sm-12 mx-2 rounded">
                   <div class="container">
                       <div class="container">
-                          <div id="carta" class="card w-75 mx-auto d-none fw-bold">
-                              <img id="img" src="" class="card-img-top" alt="">
-                              <div class="card-body">
+                        <div id="carta" class="card w-75 mx-auto d-none fw-bold">
+                          <img id="img" src="" class="card-img-top" alt="">
+                          <div class="card-body text-center text-success fs-4">
                                 <p id="name"></p>
                                 <p id="level"></p>
                               </div>
@@ -77,6 +78,7 @@
                   </div>
               </article>
           </div>
+          <audio id="digiEvolucion" src="./assets/sounds/digievoluacion.mp3" preload="auto"></audio>
         </section>
     </main>
     <!-- JavaScript -->
