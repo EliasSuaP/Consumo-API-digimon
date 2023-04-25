@@ -1,0 +1,7 @@
+body{
+    background-image: url('../img/bg.png');
+    font-family: 'Chakra Petch', sans-serif;
+}
+.card{
+    background-color: hwb(271 17% 11% / .5);
+}
