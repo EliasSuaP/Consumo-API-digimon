@@ -5,3 +5,28 @@ body{
 .card{
     background-color: hwb(271 17% 11% / .5);
 }
+.selec{
+    cursor: pointer;
+}
+.alto{
+    max-height: 75vh;
+}
+/* Oculto scroll */
+.alto::-webkit-scrollbar{
+    -webkit-appearance: none;
+}
+/* le doy un ancho al scroll vertical */
+.alto::-webkit-scrollbar:vertical{
+    width: 10px;
+}
+/* Quito los botones de scroll */
+.alto::-webkit-scrollbar-button:increment,
+.alto::-webkit-scrollbar-button {
+    display: none;
+}
+/* Doy estilos al nuevo scroll */
+.alto::-webkit-scrollbar-thumb {
+    background-color: #534949d3;
+    border-radius: 20px;
+    border: 1px solid #eefe03d1;
+}
